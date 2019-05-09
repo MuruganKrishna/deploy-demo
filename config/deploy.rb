@@ -1,17 +1,20 @@
 # config valid for current version and patch releases of Capistrano
 require "whenever/capistrano"
 lock "~> 3.11.0"
-set :rvm_map_bins
+# set :rvm_map_bins
 set :application, "deploy"
 set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
 set :branch, :master
+set :scm, :git
 set :deploy_to, '/home/ubuntu/deploy'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
+set :user,"ubuntu"
 set :rvm_type, :user
 set :rvm_ruby_version, 'ruby-2.3.3' # Edit this if you are using MRI Ruby
+
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
