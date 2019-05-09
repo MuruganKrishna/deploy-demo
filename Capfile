@@ -1,6 +1,8 @@
 # require 'capistrano/rails'
 #     require 'capistrano/passenger'
 # Load DSL and set up stages
+require 'capistrano/rails'
+    require 'capistrano/passenger'
 require "capistrano/setup"
 
 # Include default deployment tasks
