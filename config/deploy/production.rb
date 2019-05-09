@@ -30,7 +30,7 @@
 # For available Capistrano configuration variables see the documentation page.
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
-
+server '18.188.114.41', user: 'ubuntu', roles: %w{app db web}
 
 
 # Custom SSH Options
@@ -59,4 +59,3 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-server '18.188.202.5', user: "ubuntu", roles: %w{web app db}

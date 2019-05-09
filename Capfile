@@ -1,13 +1,15 @@
-# require 'capistrano/rails'
-#     require 'capistrano/passenger'
 # Load DSL and set up stages
-require 'capistrano/rails'
-    require 'capistrano/passenger'
 require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
 
+require 'capistrano/rails'
+    require 'capistrano/passenger'
+
+    require 'capistrano/rvm'
+    set :rvm_type, :user
+    set :rvm_ruby_version, '2.3.3   '
 # Load the SCM plugin appropriate to your project:
 #
 # require "capistrano/scm/hg"
@@ -30,15 +32,12 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
-require "capistrano/rvm"
-set :rvm_type, :user
- set :rvm_ruby_version, '2.3.3'
+# require "capistrano/rvm"
 # require "capistrano/rbenv"
 # require "capistrano/chruby"
-require "capistrano/bundler"
-require "capistrano/rails/assets"
-require "capistrano/rails/migrations"
-# require "/capistrano"
+# require "capistrano/bundler"
+# require "capistrano/rails/assets"
+# require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
