@@ -5,7 +5,7 @@ lock "~> 3.11.0"
 set :application, "deploy"
 set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
 set :branch, :master
-set :scm, :git
+# set :scm, :git
 set :deploy_to, '/home/ubuntu/deploy'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
