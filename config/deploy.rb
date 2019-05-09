@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-require "whenever/capistrano"
+# require "whenever/capistrano"
 lock "~> 3.11.0"
 # set :rvm_map_bins
 set :application, "deploy"
