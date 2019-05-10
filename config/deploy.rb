@@ -30,7 +30,7 @@ set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
         end
         after :finishing, 'deploy:restart'
         # after :finishing, 'deploy:cleanup'
-        # after :updated, 'deploy:precompile'
+        after :updated, 'deploy:precompile'
       end
 
 # Default branch is :master
