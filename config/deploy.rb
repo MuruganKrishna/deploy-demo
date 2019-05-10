@@ -9,29 +9,29 @@ set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
     append :linked_files, "config/database.yml", "config/secrets.yml"
     append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-    #  namespace :deploy do
+     namespace :deploy do
 
-    #     desc 'Restart application'
-    #     task :restart do
-    #       on roles(:app), in: :sequence, wait: 5 do
-    #         execute "sudo service nginx restart"
-    #       end
-    #     end
-    #     desc 'precompile assets'
-    #     task :precompile do
-    #       on roles(:app), in: :sequence, wait: 5 do
-    #         with :environment=>:production do
-    #           within release_path do
-    #             rake "assets:clean"
-    #             rake "assets:precompile NG_FORCE=true"
-    #           end
-    #         end
-    #       end
-    #     end
-    #     after :finishing, 'deploy:restart'
-    #     after :finishing, 'deploy:cleanup'
-    #     after :updated, 'deploy:precompile'
-    #   end
+        desc 'Restart application'
+        task :restart do
+          on roles(:app), in: :sequence, wait: 5 do
+            execute "sudo service nginx restart"
+          end
+        end
+        desc 'precompile assets'
+        task :precompile do
+          on roles(:app), in: :sequence, wait: 5 do
+            with :environment=>:production do
+              within release_path do
+                rake "assets:clean"
+                rake "assets:precompile NG_FORCE=true"
+              end
+            end
+          end
+        end
+        after :finishing, 'deploy:restart'
+        # after :finishing, 'deploy:cleanup'
+        # after :updated, 'deploy:precompile'
+      end
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
