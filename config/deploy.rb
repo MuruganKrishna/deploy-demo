@@ -15,6 +15,7 @@ set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
         task :restart do
           on roles(:app), in: :sequence, wait: 5 do
             execute "sudo service nginx restart"
+            puts "restarted"
           end
         end
         desc 'precompile assets'
@@ -30,7 +31,7 @@ set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
         end
         after :finishing, 'deploy:restart'
         # after :finishing, 'deploy:cleanup'
-        after :updated, 'deploy:precompile'
+        # after :updated, 'deploy:precompile'
       end
 
 # Default branch is :master
