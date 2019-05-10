@@ -24,7 +24,7 @@ set :repo_url, "git@github.com:MuruganKrishna/deploy-demo.git"
             with :environment=>:production do
               within release_path do
                 rake "assets:clean"
-                rake "assets:precompile NG_FORCE=true"
+                rake "assets:precompile"
               end
             end
           end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'signins#new'
+  get 'edit',to: 'signins#index'
   resources :signins
 
   #check
