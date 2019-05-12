@@ -71,4 +71,8 @@ class SigninsController < ApplicationController
     def signin_params
       params.require(:signin).permit(:email, :password)
     end
+    def schedule
+    end
+    def tickects
+    end
 end
