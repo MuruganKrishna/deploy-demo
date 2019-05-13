@@ -3,6 +3,16 @@ class SigninsController < ApplicationController
 
   # GET /signins
   # GET /signins.json
+  def schedule
+  end
+  def tickets
+    # binding.pry
+    url = request.path
+    unless request.path == "schedule" || request.path=="tickets"
+      redirect_to "http://18.188.114.41/" ,status: 301 and return
+    end
+  end
+
   def index
     @signins = Signin.all
   end
@@ -71,8 +81,5 @@ class SigninsController < ApplicationController
     def signin_params
       params.require(:signin).permit(:email, :password)
     end
-    def schedule
-    end
-    def tickects
-    end
+    
 end
