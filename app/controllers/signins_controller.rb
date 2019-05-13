@@ -8,7 +8,7 @@ class SigninsController < ApplicationController
   def tickets
     # binding.pry
     url = request.path
-    unless request.path == "schedule" || request.path=="tickets"
+    unless request.path == "schedule" || request.path== "tickets"
       redirect_to "http://18.188.114.41/" ,status: 301 and return
     end
   end
