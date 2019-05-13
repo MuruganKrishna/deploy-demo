@@ -6,11 +6,16 @@ class SigninsController < ApplicationController
   def schedule
   end
   def tickets
-    # binding.pry
-    url = request.path
-    unless request.path == "schedule" || request.path== "tickets"
-      redirect_to "http://18.188.114.41/" ,status: 301 and return
-    end
+  end
+
+  def defaultroute
+    if request.path.include? "schedule"
+        redirect_to "http://18.188.114.41/schedule", status: 301 and return
+      elsif request.path.include? "tickets"
+        redirect_to "http://18.188.114.41/tickets", status: 301 and return
+      else
+        redirect_to "http://18.188.114.41/", status: 301 and return
+      end
   end
 
   def index
