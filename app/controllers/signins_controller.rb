@@ -10,11 +10,11 @@ class SigninsController < ApplicationController
 
   def defaultroute
     if request.path.include? "schedule"
-        redirect_to "http://18.188.114.41/schedule", status: 301 and return
+        redirect_to "http://18.222.84.251/schedule", status: 301 and return
       elsif request.path.include? "tickets"
-        redirect_to "http://18.188.114.41/tickets", status: 301 and return
+        redirect_to "http://18.222.84.251/tickets", status: 301 and return
       else
-        redirect_to "http://18.188.114.41/", status: 301 and return
+        redirect_to "http://18.222.84.251/", status: 301 and return
       end
   end
 
